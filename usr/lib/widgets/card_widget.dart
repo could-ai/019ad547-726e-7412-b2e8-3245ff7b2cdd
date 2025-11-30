@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/poker_models.dart';
 
 class CardWidget extends StatelessWidget {
-  final Card? card;
+  final PokerCard? card;
   final bool isHidden;
   final double width;
   final double height;

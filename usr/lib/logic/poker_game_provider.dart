@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../models/poker_models.dart';
 
 class PokerGameProvider extends ChangeNotifier {
-  List<Card> _deck = [];
-  List<Card> communityCards = [];
+  List<PokerCard> _deck = [];
+  List<PokerCard> communityCards = [];
   List<Player> players = [];
   int pot = 0;
   int currentBet = 0; // The amount to call
@@ -62,7 +62,7 @@ class PokerGameProvider extends ChangeNotifier {
     _deck = [];
     for (var suit in Suit.values) {
       for (var rank in Rank.values) {
-        _deck.add(Card(suit, rank));
+        _deck.add(PokerCard(suit, rank));
       }
     }
     _deck.shuffle(Random());

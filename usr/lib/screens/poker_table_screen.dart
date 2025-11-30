@@ -175,12 +175,7 @@ class PokerTableScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: player.hand.map((c) {
               // Show cards if it's the user OR if the game is in showdown phase
-              bool showCard = isUser || (player.hand.isNotEmpty && player.hand.first.value > 0 && c == player.hand.first && false); 
-              // Actually, logic for showdown:
-              // We need access to game phase here, but for simplicity, let's just hide bots until we implement full showdown reveal logic in provider
               // For now: User sees their cards. Bots hide cards.
-              // UPDATE: Let's allow seeing bot cards if game is over (winner determined)
-              // Since we don't have easy access to 'isGameOver' flag here without passing it, we'll keep it simple.
               
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 2.0),

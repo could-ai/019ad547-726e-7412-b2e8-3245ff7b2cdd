@@ -1,11 +1,11 @@
 enum Suit { spades, hearts, diamonds, clubs }
 enum Rank { two, three, four, five, six, seven, eight, nine, ten, jack, queen, king, ace }
 
-class Card {
+class PokerCard {
   final Suit suit;
   final Rank rank;
 
-  Card(this.suit, this.rank);
+  PokerCard(this.suit, this.rank);
 
   @override
   String toString() => '${rank.name} of ${suit.name}';
@@ -36,7 +36,7 @@ class Card {
 class Player {
   String name;
   int chips;
-  List<Card> hand = [];
+  List<PokerCard> hand = [];
   bool isFolded = false;
   bool isBot;
   int currentBet = 0;
